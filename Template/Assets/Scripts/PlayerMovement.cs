@@ -38,14 +38,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Treasure")
         {
-            score++;
+            GameManager.Instance.Score++;
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Enemy")
         {
-            score--;
-            Destroy(gameObject);
+            GameManager.Instance.Score--;
+            //Destroy(gameObject);
             //SceneManagement.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
